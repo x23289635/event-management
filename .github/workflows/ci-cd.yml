@@ -1,0 +1,36 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Dependencies
+      run: |
+        cd frontend
+        npm install
+        cd ../backend
+        npm install
+        
+    - name: Build Frontend
+      run: |
+        cd frontend
+        npm run build
+        
+    - name: Deploy to AWS
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AKIAQ7C2HXAQYS724EEZ }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.hifFD6eaXRmsN35wbntyrltAlM+Uu2XZdsKW8sBD }}
+      run: |
+        # Add AWS deployment commands here

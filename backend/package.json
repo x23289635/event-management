@@ -1,0 +1,13 @@
+{
+    "name": "event-management-backend",
+    "version": "1.0.0",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.21.2",
+        "mongoose": "^8.0.3",
+        "sqlite3": "^5.1.7"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}
