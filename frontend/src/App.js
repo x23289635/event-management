@@ -121,7 +121,7 @@ function App() {
                 <p>Location: {event.location}</p>
                 <div>
                   <button onClick={() => startEdit(event)} style={editButtonStyle}>Edit</button>
-                  <button onClick={() => deleteEvent(event.id)} style={deleteButtonStyle}>Delete</button>
+                  <button onClick={() => deleteEvent(event.id)} style={deleteButtonStyle}>Delete button edited</button>
                 </div>
               </div>
             )}
